@@ -1,0 +1,16 @@
+google-generativeai>=0.3.0
+google-api-python-client
+langchain-core
+langchain
+langchain-google-genai>=0.0.3
+langgraph>=0.0.3
+langchain-community
+pandas
+transformers
+torch
+rich
+fastapi
+uvicorn
+pydantic
+jinja2
+aiofiles

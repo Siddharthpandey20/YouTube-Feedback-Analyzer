@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Feedback Analysis Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <div id="welcome-screen" class="welcome-overlay">
+        <div class="welcome-content">
+            <h1>📊 YouTube Feedback Analyzer</h1>
+            <p>Enter a YouTube video ID to analyze viewer feedback and get insights</p>
+            <div class="search-container welcome-search">
+                <input type="text" id="welcomeVideoId" placeholder="Paste YouTube Video ID here...">
+                <button onclick="startAnalysis()" class="search-btn">Start Analysis 🚀</button>
+            </div>
+            <div class="instruction-box">
+                <p>💡 Quick Guide:</p>
+                <ol>
+                    <li>Go to any YouTube video</li>
+                    <li>Copy the ID from URL (e.g., dQw4w9WgXcQ)</li>
+                    <li>Paste it here and analyze!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <nav class="glass-nav" style="display: none;">
+        <div class="search-container">
+            <input type="text" id="videoId" placeholder="Enter YouTube Video ID...">
+            <button onclick="analyzeVideo()" class="search-btn">Analyze 🔍</button>
+        </div>
+    </nav>
+
+    <div class="loading-overlay" id="loading">
+        <div class="loading-content">
+            <div class="loader"></div>
+            <div class="loading-text">Analyzing feedback...</div>
+        </div>
+    </div>
+
+    <main style="display: none;">
+        <div class="overview-cards">
+            <div class="card stats-card placeholder">
+                <h3>👥 Customer Feedback Overview</h3>
+                <div class="placeholder-content">
+                    <p>Total Comments: <span id="totalComments">-</span></p>
+                    <small>Enter a video ID to see analysis</small>
+                </div>
+            </div>
+            <div class="card chart-card placeholder">
+                <h3>😊 Sentiment Analysis</h3>
+                <canvas id="sentimentChart"></canvas>
+                <div class="placeholder-content">
+                    <p>Customer satisfaction distribution</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="major-issues placeholder">
+            <h2>⚠️ Key Issues & Solutions</h2>
+            <div id="issuesContainer" class="placeholder-content">
+                <p>Major concerns and their solutions will appear here</p>
+            </div>
+        </section>
+
+        <section class="recommendations placeholder">
+            <h2>💡 Strategic Recommendations</h2>
+            <div id="recommendationsContainer" class="placeholder-content">
+                <p>Action items and improvements will be shown here</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
